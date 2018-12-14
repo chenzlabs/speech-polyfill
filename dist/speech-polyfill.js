@@ -1873,8 +1873,9 @@ navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || (fu
 })();
 // polyfill speechRecognition
 (function (speechRecognition) {
-    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || __WEBPACK_IMPORTED_MODULE_0__js_src_SpeechRecognition__["a" /* SpeechRecognition */];
+    window.SpeechRecognition = speechRecognition || __WEBPACK_IMPORTED_MODULE_0__js_src_SpeechRecognition__["a" /* SpeechRecognition */];
 })(window.SpeechRecognition || window.webkitSpeechRecognition);
+
 
 /***/ }),
 /* 18 */
@@ -2015,9 +2016,12 @@ class SpeechRecognition {
             case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].InitialSilenceTimeout:
             case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].EndOfDictation:
             case __WEBPACK_IMPORTED_MODULE_2_microsoft_speech_browser_sdk_src_sdk_speech_Exports__["f" /* RecognitionStatus */].BabbleTimeout:
-                console.log('something happened', event);
+                console.log('something happened', { result, error });
                 // call onend;
                 break;
+            // default:
+            //     console.log('falled into default', event);
+            // log unexpected case
         }
     }
     recognitionStartSuccess(listening) {

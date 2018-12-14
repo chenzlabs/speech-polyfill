@@ -6,12 +6,12 @@ export declare class SpeechRecognition implements ISpeechRecognition {
     start(): void;
     stop(): void;
     abort(): void;
-    private handleEvent(event);
-    private handleHypothesis({result, error});
-    private handleResult({result, error});
-    private recognitionStartSuccess(listening);
-    private recognitionStartFailed(error);
-    private setupRecognizer();
+    private handleEvent;
+    private handleHypothesis;
+    private handleResult;
+    private recognitionStartSuccess;
+    private recognitionStartFailed;
+    private setupRecognizer;
     onaudiostart: () => void;
     onaudioend: () => void;
     onstart: () => void;
