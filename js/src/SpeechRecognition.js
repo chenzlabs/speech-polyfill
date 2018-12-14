@@ -128,9 +128,12 @@ export class SpeechRecognition {
             case RecognitionStatus.InitialSilenceTimeout:
             case RecognitionStatus.EndOfDictation:
             case RecognitionStatus.BabbleTimeout:
-                console.log('something happened', event);
+                console.log('something happened', { result, error });
                 // call onend;
                 break;
+            // default:
+            //     console.log('falled into default', event);
+            // log unexpected case
         }
     }
     recognitionStartSuccess(listening) {
